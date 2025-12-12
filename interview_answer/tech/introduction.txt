@@ -1,0 +1,19 @@
+1) I have experience working on software development projects that involve designing, implementing, testing, and maintaining applications. This experience has given me a solid understanding of the software development lifecycle and the importance of writing clean, maintainable code. For example, I have worked on projects where I implemented features, fixed bugs, and collaborated with teammates using version control and code reviews.
+
+2) I am most comfortable with programming languages such as Java, Python, and JavaScript. These languages allow me to work across different layers of a system, from backend logic to frontend interactions. For example, I have used Java for backend services, Python for scripting or data processing, and JavaScript for building interactive web interfaces.
+
+3) I recently worked on a technical project that involved developing a system with multiple modules and clear separation of responsibilities. This approach improved maintainability and made testing easier. For example, I implemented core functionality, integrated it with a database or API, and verified the results through testing.
+
+4) I am motivated to work in tech because it allows me to solve real-world problems using logical thinking and technology. The field also encourages continuous learning and improvement. For example, I enjoy seeing how software solutions can automate tasks and improve efficiency.
+
+5) I stay updated with new technologies by reading official documentation, technical blogs, and community discussions. This helps me keep up with industry trends and best practices. For example, I explore new frameworks by building small practice projects to understand their features.
+
+6) I implemented a complex feature by breaking it down into smaller, manageable components. This made the development process more structured and reduced potential errors. For example, I separated data processing, business logic, and user interface layers before integrating them into a complete feature.
+
+7) I have experience working with various frameworks and development tools that support efficient software development. These tools help improve productivity, collaboration, and code quality. For example, I have used frameworks such as Spring Boot or React, along with tools like Git and modern IDEs.
+
+8) I approach debugging a challenging issue by first reproducing the problem and narrowing down possible causes. This systematic method helps identify the root cause more effectively. For example, I use logging, breakpoints, and test cases to trace the issue step by step before applying a fix.
+
+9) I recently solved a technical challenge by carefully analyzing why a feature was not working as expected. This required reviewing the logic flow and validating assumptions in the code. For example, I identified an incorrect condition in the program and corrected it to restore proper functionality.
+
+10) I enjoy working in the tech field because it combines problem-solving, creativity, and continuous learning. The constant evolution of technology keeps the work challenging and engaging. For example, I find satisfaction in learning a new concept and successfully applying it to improve a system.

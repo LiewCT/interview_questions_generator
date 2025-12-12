@@ -1,43 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="UTF-8" />
+  <title>Interview Q&A Generator</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 40px;
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    select, button {
+      padding: 12px 18px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .question {
+      font-size: 20px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .answer-btn {
+      background: #10b981;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .answer-btn:hover {
+      background: #059669;
+    }
+
+    .answer-box {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      background: #f9fafb;
+      border-left: 4px solid #10b981;
+      border-radius: 6px;
+      
+      color: #111827;
+      font-size: 25px;
+      line-height: 1.6;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Interview Q&A Generator</h1>
+
+    <div class="controls">
+    <select id="role">
+        <option value="admin">Admin</option>
+        <option value="general">General</option>
+        <option value="hr">HR</option>
+        <option value="marketing">Marketing</option>
+        <option value="sales">Sales</option>
+        <option value="tech">Tech</option>
+    </select>
+
+    <button onclick="loadQA()">Generate</button>
+    <button onclick="downloadQA()">Download Q&A</button>
+    </div>
+
+
+    <div id="questions"></div>
+  </div>
+
+  <script>
+    let currentQA = null;
+
+    async function loadQA() {
+      const role = document.getElementById("role").value;
+      const res = await fetch(`/qa/${role}`);
+      const data = await res.json();
+
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+
+      const container = document.getElementById("questions");
+      container.innerHTML = "";
+
+      const sections = [
+        ["Introduction", data.introduction],
+        ["Behavioral", data.behavioral],
+        ["Skills", data.skills],
+        ["Situational", data.situational],
+        ["Closing", data.closing]
+      ];
+
+      sections.forEach(([label, obj]) => {
+        const card = document.createElement("div");
+        card.className = "question-card";
+
+        card.innerHTML = `
+          <div class="label">${label}</div>
+          <div class="question">${obj.question}</div>
+
+          <button class="answer-btn" onclick="toggleAnswer(this)">
+            Show Answer
+          </button>
+
+          <div class="answer-box">
+            ${obj.answer}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    async function loadQA() {
+    const role = document.getElementById("role").value;
+    const res = await fetch(`/qa/${role}`);
+    const data = await res.json();
+
+    if (data.error) {
+        alert(data.error);
+        return;
+    }
+
+    currentQA = data; // ✅ store for download
+
+    const container = document.getElementById("questions");
+    container.innerHTML = "";
+
+    const sections = [
+        ["Introduction", data.introduction],
+        ["Behavioral", data.behavioral],
+        ["Skills", data.skills],
+        ["Situational", data.situational],
+        ["Closing", data.closing]
+    ];
+
+    sections.forEach(([label, obj], i) => {
+        const card = document.createElement("div");
+        card.className = "question-card";
+
+        card.innerHTML = `
+        <div class="label">${label}</div>
+        <div class="question">${obj.question}</div>
+
+        <button class="answer-btn" onclick="toggleAnswer(this)">
+            Show Answer
+        </button>
+
+        <div class="answer-box">
+            ${obj.answer}
+        </div>
+        `;
+
+        container.appendChild(card);
+    });
+    }
+
+    function toggleAnswer(btn) {
+      const box = btn.nextElementSibling;
+      const open = box.style.display === "block";
+
+      document.querySelectorAll(".answer-box").forEach(b => b.style.display = "none");
+
+      box.style.display = open ? "none" : "block";
+      btn.textContent = open ? "Show Answer" : "Hide Answer";
+    }
+    function downloadQA() {
+        if (!currentQA) {
+            alert("Please generate questions first.");
+            return;
+        }
+
+        let content = "";
+        let qNum = 1;
+
+        const order = [
+            currentQA.introduction,
+            currentQA.behavioral,
+            currentQA.skills,
+            currentQA.situational,
+            currentQA.closing
+        ];
+
+        order.forEach(item => {
+            content += `Q${qNum}: ${item.question}\n`;
+            content += `A${qNum}: ${item.answer}\n\n`;
+            qNum++;
+        });
+
+        const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "interview_QA.txt";
+        a.click();
+
+        URL.revokeObjectURL(url);
+    }
+
+</script>
+</body>
 </html>

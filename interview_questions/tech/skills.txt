@@ -1,0 +1,10 @@
+1. Which programming languages and frameworks do you know?
+2. Describe a technical project you successfully completed.
+3. How do you approach debugging and testing?
+4. What version control systems do you use?
+5. How do you optimize code for performance?
+6. Explain a situation where you automated a manual process.
+7. Describe a time you worked with APIs or external systems.
+8. How do you approach learning a new technical tool?
+9. What software development methodology do you prefer?
+10. Describe a time you improved system reliability.
