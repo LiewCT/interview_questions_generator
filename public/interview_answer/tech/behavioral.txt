@@ -1,0 +1,19 @@
+1) I collaborated on a development project by working closely with team members from different roles to achieve a shared goal. Collaboration was important to ensure that features were implemented correctly and integrated smoothly. For example, I coordinated with frontend and backend developers to align API responses with UI requirements and resolve issues early.
+
+2) I solved a technical problem creatively by rethinking the original approach instead of applying a straightforward fix. This allowed me to find a more efficient and maintainable solution. For example, I redesigned a process that was originally synchronous into an asynchronous flow, which improved performance and scalability.
+
+3) I handled tight deadlines by prioritizing critical tasks and managing my time carefully. This approach helped ensure that essential features were delivered without compromising quality. For example, during a short sprint, I focused on core functionality first and deferred minor enhancements until after the deadline.
+
+4) I improved a codebase by refactoring existing code to make it cleaner and more maintainable. Improving code quality helps reduce bugs and makes future changes easier. For example, I removed duplicated logic, improved naming conventions, and organized the code into reusable functions.
+
+5) I learned a new technology quickly by studying documentation and applying it directly in a project. Hands-on practice helped me understand the concepts faster and more effectively. For example, I learned a new framework by building a small prototype and gradually integrating it into the main project.
+
+6) I resolved a conflict with a teammate by communicating openly and focusing on technical facts rather than personal opinions. This helped us reach a decision that benefited the project. For example, we discussed different design approaches, compared their pros and cons, and agreed on a solution based on maintainability.
+
+7) I adapted to a new development process by learning its workflow and adjusting my working habits. This flexibility helped me stay productive and aligned with the team. For example, when the team moved to Agile practices, I adapted to daily stand-ups, sprint planning, and regular reviews.
+
+8) My solution failed when it did not behave as expected in a real environment, so I took responsibility and analyzed the issue. This allowed me to identify the root cause and prevent the same problem from happening again. For example, I reviewed logs, rolled back the change, fixed the logic error, and added tests to ensure stability.
+
+9) I contributed to optimizing system performance by identifying bottlenecks and improving inefficient code. Performance optimization is important to ensure a smooth user experience. For example, I optimized database queries and reduced unnecessary computations, which significantly improved response time.
+
+10) I mentored someone on technical tasks by guiding them through concepts and providing constructive feedback. This helped improve their confidence and technical skills. For example, I assisted a junior teammate during code reviews and explained debugging techniques step by step.

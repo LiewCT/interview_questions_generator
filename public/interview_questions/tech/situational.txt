@@ -1,0 +1,10 @@
+1. What would you do if your code caused a production error?
+2. How would you handle conflicting requirements in a project?
+3. What steps would you take if you missed a critical deadline?
+4. How would you respond if a teammate submitted low-quality code?
+5. What would you do if your project was falling behind schedule?
+6. How would you manage urgent bug fixes while handling a new feature?
+7. What would you do if your design decision was challenged by your manager?
+8. How would you approach a situation with unclear requirements?
+9. What would you do if a critical system failed in production?
+10. How would you prioritize multiple urgent tasks in a sprint?

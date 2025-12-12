@@ -1,0 +1,19 @@
+1) Yes, I do have questions about your tech stack and development environment. Understanding the tools, frameworks, and architecture helps me align my skills with your team’s workflow. For example, I would like to know about your primary frameworks, deployment pipeline, and testing practices.
+
+2) My career goal in tech is to grow into a skilled and reliable software engineer who can take ownership of complex systems. This goal motivates me to continuously improve both my technical and problem-solving skills. For example, I aim to progress toward a senior role where I can design solutions and mentor others.
+
+3) I see myself growing as a developer by strengthening my fundamentals and gaining experience with larger systems. Continuous learning and feedback are important for long-term growth. For example, I actively review my past work, learn from code reviews, and apply better design patterns in new projects.
+
+4) Yes, I am open to learning new programming languages because technology evolves rapidly. Being adaptable allows me to contribute effectively to different projects. For example, I have previously learned new languages or frameworks when project requirements changed.
+
+5) I am motivated to solve technical challenges because they provide opportunities to think critically and improve systems. Overcoming complex problems is both intellectually rewarding and valuable to the team. For example, I enjoy analyzing difficult bugs and turning them into stable, well-tested solutions.
+
+6) I am comfortable working as a full-stack developer, but I can focus on front-end or back-end when needed. This flexibility helps the team respond to changing priorities. For example, I can build user interfaces, connect them to APIs, and also optimize backend logic if required.
+
+7) I handle challenging technical problems by breaking them down into smaller, manageable parts. This structured approach makes complex issues easier to understand and solve. For example, I identify the root cause first, test assumptions, and then apply targeted fixes.
+
+8) I am excited by recent tech trends that improve scalability, efficiency, and developer productivity. Staying aware of trends helps me adopt better practices. For example, I am particularly interested in cloud technologies and AI-driven tools.
+
+9) You should hire me for this tech role because I am reliable, adaptable, and committed to producing quality work. I focus on both technical correctness and collaboration with the team. For example, I consistently meet deadlines, communicate clearly, and take responsibility for my tasks.
+
+10) I would contribute to your development team by delivering clean, maintainable code and collaborating proactively. This helps ensure smooth progress and shared ownership of the system. For example, I participate actively in discussions, support teammates during reviews, and suggest improvements when appropriate.

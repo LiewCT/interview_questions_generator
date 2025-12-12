@@ -1,0 +1,19 @@
+1) If my code caused a production error, I would act immediately to stabilize the system. This is important to minimize impact on users and prevent further damage. For example, I would roll back to a stable version or apply a hotfix, then investigate logs to identify and fix the root cause.
+
+2) I would handle conflicting requirements by clarifying priorities with stakeholders. This helps ensure that decisions align with business goals and technical constraints. For example, I would discuss trade-offs with the team and agree on which requirements should be addressed first.
+
+3) If I missed a critical deadline, I would communicate the situation as early and transparently as possible. Clear communication helps maintain trust and allows adjustments to be made. For example, I would explain the cause of the delay, propose a revised timeline, and prioritize the most critical deliverables.
+
+4) If a teammate submitted low-quality code, I would address it constructively and professionally. This helps maintain team morale while improving code quality. For example, I would give clear feedback during code review and suggest specific improvements or best practices.
+
+5) If a project was falling behind schedule, I would reassess priorities and identify blockers. This allows the team to focus on what matters most to regain momentum. For example, I would propose reducing scope or reallocating tasks to ensure core features are delivered on time.
+
+6) I would manage urgent bug fixes by prioritizing them over new feature development when necessary. This is important because system stability is more critical than adding new functionality. For example, I would pause feature work temporarily to resolve high-impact bugs before continuing.
+
+7) If my design decision was challenged by my manager, I would listen openly and explain my reasoning clearly. This encourages constructive discussion and better decision-making. For example, I would present the pros and cons of my approach and adjust it if the feedback highlighted valid concerns.
+
+8) With unclear requirements, I would seek clarification before proceeding. This helps avoid rework and incorrect implementations. For example, I would ask targeted questions, create a simple prototype, or confirm assumptions with stakeholders.
+
+9) If a critical system failed in production, I would follow incident response procedures immediately. This ensures a structured and efficient recovery process. For example, I would help restore service, analyze the failure, and implement preventive measures such as monitoring or additional tests.
+
+10) I would prioritize multiple urgent tasks by assessing their impact and urgency. This approach ensures that the most critical issues are handled first. For example, I would address tasks blocking other team members or affecting users before less critical items.

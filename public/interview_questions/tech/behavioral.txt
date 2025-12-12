@@ -1,0 +1,10 @@
+1. Describe a time you collaborated on a development project.
+2. Tell me about a time you solved a technical problem creatively.
+3. Give an example of handling tight deadlines in tech projects.
+4. Describe a situation where you improved a codebase.
+5. Tell me about a time you learned a new technology quickly.
+6. Give an example of resolving a conflict with a teammate on a project.
+7. Describe a time when you had to adapt to a new development process.
+8. Tell me about a time your solution failed and how you recovered.
+9. Describe a time you contributed to optimizing system performance.
+10. Give an example of mentoring someone on technical tasks.

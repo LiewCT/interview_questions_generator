@@ -1,0 +1,10 @@
+1. Tell me about your experience in software development.
+2. Which programming languages are you most comfortable with?
+3. Describe a recent technical project you worked on.
+4. What motivates you to work in tech?
+5. How do you stay updated with new technologies?
+6. Describe a time you implemented a complex feature.
+7. What frameworks or tools are you experienced with?
+8. How do you approach debugging a challenging issue?
+9. Tell me about a technical challenge you solved recently.
+10. Why do you enjoy working in the tech field?

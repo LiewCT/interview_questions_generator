@@ -1,0 +1,19 @@
+1) I am familiar with several programming languages and frameworks commonly used in software development. This allows me to work across different parts of a system and adapt to project requirements. For example, I have used languages like Java, Python, and JavaScript together with frameworks such as Spring Boot or React.
+
+2) I successfully completed a technical project by planning the structure carefully and implementing features step by step. This approach helped ensure the system was stable and maintainable. For example, I developed a project with separate modules for logic, data handling, and user interface, then tested each part before integration.
+
+3) I approach debugging and testing in a systematic and structured way. This helps identify root causes efficiently and reduces the chance of introducing new bugs. For example, I reproduce the issue, use logs and breakpoints to trace the problem, and verify the fix with test cases.
+
+4) I use version control systems to manage code changes and collaborate effectively with others. Version control is important for tracking history, resolving conflicts, and maintaining code quality. For example, I regularly use Git with branches and pull requests to review and merge changes safely.
+
+5) I optimize code for performance by first identifying bottlenecks before making changes. This ensures that optimization efforts are focused and effective. For example, I analyze slow-running code, optimize algorithms or database queries, and remove unnecessary computations.
+
+6) I automated a manual process by analyzing repetitive tasks and converting them into scripts or automated workflows. Automation helps reduce errors and saves time. For example, I created a script to automatically process data and generate reports instead of performing the steps manually.
+
+7) I worked with APIs and external systems by integrating them into an application’s workflow. This required understanding data formats, authentication, and error handling. For example, I consumed a REST API to fetch external data and handled responses and failures properly within the system.
+
+8) I approach learning a new technical tool by studying documentation and applying it through hands-on practice. This helps me understand both concepts and real-world usage. For example, I learned a new library by building a small demo project before using it in a larger system.
+
+9) I prefer software development methodologies that support flexibility and continuous improvement. These methodologies help teams adapt to changes and deliver value incrementally. For example, I prefer Agile development because it encourages regular feedback, iterative progress, and collaboration.
+
+10) I improved system reliability by identifying potential failure points and strengthening them. This reduces downtime and increases user trust in the system. For example, I added validation, error handling, and tests to ensure the system behaved correctly under unexpected conditions.

@@ -1,0 +1,10 @@
+1. Do you have questions about our tech stack?
+2. What are your career goals in tech?
+3. How do you see yourself growing as a developer?
+4. Are you open to learning new programming languages?
+5. What motivates you to solve technical challenges?
+6. Would you prefer working on front-end, back-end, or full-stack?
+7. How do you handle challenging technical problems?
+8. What recent tech trends excite you the most?
+9. Why should we hire you for this tech role?
+10. What contributions would you bring to our development team?
