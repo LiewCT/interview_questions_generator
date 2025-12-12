@@ -119,139 +119,100 @@
 
     <div id="questions"></div>
   </div>
+<script>
+  let currentQA = null;
 
-  <script>
-    let currentQA = null;
-
-    async function loadQA() {
-      const role = document.getElementById("role").value;
-      const res = await fetch(`/qa/${role}`);
-      const data = await res.json();
-
-      if (data.error) {
-        alert(data.error);
-        return;
-      }
-
-      const container = document.getElementById("questions");
-      container.innerHTML = "";
-
-      const sections = [
-        ["Introduction", data.introduction],
-        ["Behavioral", data.behavioral],
-        ["Skills", data.skills],
-        ["Situational", data.situational],
-        ["Closing", data.closing]
-      ];
-
-      sections.forEach(([label, obj]) => {
-        const card = document.createElement("div");
-        card.className = "question-card";
-
-        card.innerHTML = `
-          <div class="label">${label}</div>
-          <div class="question">${obj.question}</div>
-
-          <button class="answer-btn" onclick="toggleAnswer(this)">
-            Show Answer
-          </button>
-
-          <div class="answer-box">
-            ${obj.answer}
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-
-    async function loadQA() {
+  async function loadQA() {
     const role = document.getElementById("role").value;
     const res = await fetch(`/qa/${role}`);
     const data = await res.json();
 
     if (data.error) {
-        alert(data.error);
-        return;
+      alert(data.error);
+      return;
     }
 
-    currentQA = data; // ✅ store for download
+    console.log(data);
+    currentQA = data; // store for download
 
     const container = document.getElementById("questions");
     container.innerHTML = "";
 
     const sections = [
-        ["Introduction", data.introduction],
-        ["Behavioral", data.behavioral],
-        ["Skills", data.skills],
-        ["Situational", data.situational],
-        ["Closing", data.closing]
+      ["Introduction", data.introduction],
+      ["Behavioral", data.behavioral],
+      ["Skills", data.skills],
+      ["Situational", data.situational],
+      ["Closing", data.closing]
     ];
 
-    sections.forEach(([label, obj], i) => {
-        const card = document.createElement("div");
-        card.className = "question-card";
+    sections.forEach(([label, obj]) => {
+      const card = document.createElement("div");
+      card.className = "question-card";
 
-        card.innerHTML = `
+      card.innerHTML = `
         <div class="label">${label}</div>
         <div class="question">${obj.question}</div>
 
         <button class="answer-btn" onclick="toggleAnswer(this)">
-            Show Answer
+          Show Answer
         </button>
 
         <div class="answer-box">
-            ${obj.answer}
+          ${obj.answer}
         </div>
-        `;
+      `;
 
-        container.appendChild(card);
+      container.appendChild(card);
     });
+  }
+
+  function toggleAnswer(btn) {
+    const box = btn.nextElementSibling;
+    const open = box.style.display === "block";
+
+    document
+      .querySelectorAll(".answer-box")
+      .forEach(b => (b.style.display = "none"));
+
+    box.style.display = open ? "none" : "block";
+    btn.textContent = open ? "Show Answer" : "Hide Answer";
+  }
+
+  function downloadQA() {
+    if (!currentQA) {
+      alert("Please generate questions first.");
+      return;
     }
 
-    function toggleAnswer(btn) {
-      const box = btn.nextElementSibling;
-      const open = box.style.display === "block";
+    let content = "";
+    let qNum = 1;
 
-      document.querySelectorAll(".answer-box").forEach(b => b.style.display = "none");
+    const order = [
+      currentQA.introduction,
+      currentQA.behavioral,
+      currentQA.skills,
+      currentQA.situational,
+      currentQA.closing
+    ];
 
-      box.style.display = open ? "none" : "block";
-      btn.textContent = open ? "Show Answer" : "Hide Answer";
-    }
-    function downloadQA() {
-        if (!currentQA) {
-            alert("Please generate questions first.");
-            return;
-        }
+    order.forEach(item => {
+      content += `Q${qNum}: ${item.question}\n`;
+      content += `A${qNum}: ${item.answer}\n\n`;
+      qNum++;
+    });
 
-        let content = "";
-        let qNum = 1;
+    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
 
-        const order = [
-            currentQA.introduction,
-            currentQA.behavioral,
-            currentQA.skills,
-            currentQA.situational,
-            currentQA.closing
-        ];
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "interview_QA.txt";
+    a.click();
 
-        order.forEach(item => {
-            content += `Q${qNum}: ${item.question}\n`;
-            content += `A${qNum}: ${item.answer}\n\n`;
-            qNum++;
-        });
-
-        const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-        const url = URL.createObjectURL(blob);
-
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "interview_QA.txt";
-        a.click();
-
-        URL.revokeObjectURL(url);
-    }
-
+    URL.revokeObjectURL(url);
+  }
 </script>
+
 </body>
 </html>
