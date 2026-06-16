@@ -122,57 +122,111 @@
 <script>
   let currentQA = null;
 
-  async function loadQA() {
-    const role = document.getElementById("role").value;
-    const res = await fetch(`/qa/${role}`);
-    const data = await res.json();
+  async function readFile(path) {
+    const res = await fetch(path);
 
-    if (data.error) {
-      alert(data.error);
-      return;
+    if (!res.ok) {
+      throw new Error("Cannot load: " + path);
     }
 
-    console.log(data);
-    currentQA = data; // store for download
+    const text = await res.text();
 
-    const container = document.getElementById("questions");
-    container.innerHTML = "";
+    return text
+      .split("\n")
+      .map(l => l.trim())
+      .filter(Boolean);
+  }
 
-    const sections = [
-      ["Introduction", data.introduction],
-      ["Behavioral", data.behavioral],
-      ["Skills", data.skills],
-      ["Situational", data.situational],
-      ["Closing", data.closing]
-    ];
+  function stripNumber(text) {
+    return text.replace(/^\s*\d+\s*[\.\)\-]\s*/, "").trim();
+  }
 
-    sections.forEach(([label, obj]) => {
-      const card = document.createElement("div");
-      card.className = "question-card";
+  function randomIndex(max) {
+    return Math.floor(Math.random() * max);
+  }
 
-      card.innerHTML = `
-        <div class="label">${label}</div>
-        <div class="question">${obj.question}</div>
+  async function getQA(role, type) {
+    const qPath = `/interview_questions/${role}/${type}.txt`;
+    const aPath = `/interview_answer/${role}/${type}.txt`;
 
-        <button class="answer-btn" onclick="toggleAnswer(this)">
-          Show Answer
-        </button>
+    const [questions, answers] = await Promise.all([
+      readFile(qPath),
+      readFile(aPath)
+    ]);
 
-        <div class="answer-box">
-          ${obj.answer}
-        </div>
-      `;
+    const n = Math.min(questions.length, answers.length);
 
-      container.appendChild(card);
-    });
+    if (n === 0) {
+      return {
+        question: "No data",
+        answer: "No data"
+      };
+    }
+
+    const index = randomIndex(n);
+
+    return {
+      question: stripNumber(questions[index]),
+      answer: stripNumber(answers[index])
+    };
+  }
+
+  async function loadQA() {
+    const role = document.getElementById("role").value;
+
+    try {
+      const data = {
+        introduction: await getQA(role, "introduction"),
+        behavioral: await getQA(role, "behavioral"),
+        skills: await getQA(role, "skills"),
+        situational: await getQA(role, "situational"),
+        closing: await getQA(role, "closing")
+      };
+
+      currentQA = data;
+
+      const container = document.getElementById("questions");
+      container.innerHTML = "";
+
+      const sections = [
+        ["Introduction", data.introduction],
+        ["Behavioral", data.behavioral],
+        ["Skills", data.skills],
+        ["Situational", data.situational],
+        ["Closing", data.closing]
+      ];
+
+      sections.forEach(([label, obj]) => {
+        const card = document.createElement("div");
+        card.className = "question-card";
+
+        card.innerHTML = `
+          <div class="label">${label}</div>
+          <div class="question">${obj.question}</div>
+
+          <button class="answer-btn" onclick="toggleAnswer(this)">
+            Show Answer
+          </button>
+
+          <div class="answer-box">
+            ${obj.answer}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+    } catch (err) {
+      alert(err.message);
+      console.error(err);
+    }
   }
 
   function toggleAnswer(btn) {
     const box = btn.nextElementSibling;
     const open = box.style.display === "block";
 
-    document
-      .querySelectorAll(".answer-box")
+    document.querySelectorAll(".answer-box")
       .forEach(b => (b.style.display = "none"));
 
     box.style.display = open ? "none" : "block";
@@ -213,6 +267,5 @@
     URL.revokeObjectURL(url);
   }
 </script>
-
 </body>
 </html>
