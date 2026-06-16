@@ -67,6 +67,6 @@ app.get("/qa/:role", (req, res) => {
 });
 
 /* ===== Start Server ===== */
-app.listen(PORT, () => {
-  console.log(`Server running at http://https://interview-questions-generator-pi.vercel.app/:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server running at http://https://interview-questions-generator-pi.vercel.app/:${PORT}`);
+// });
